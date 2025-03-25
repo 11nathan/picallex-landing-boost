@@ -55,6 +55,9 @@ export const translations = {
     // Support Buttons
     liveChat: "Live Chat",
     whatsAppSupport: "WhatsApp Support",
+    
+    // Footer 
+    language: "English"
   },
   es: {
     // Navigation
@@ -108,6 +111,9 @@ export const translations = {
     // Support Buttons
     liveChat: "Chat en Vivo",
     whatsAppSupport: "Soporte por WhatsApp",
+    
+    // Footer
+    language: "Español"
   }
 };
 
