@@ -11,7 +11,7 @@ export function FeaturesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative rounded-2xl overflow-hidden shadow-xl opacity-0 animate-fade-in-left">
             <img 
-              src="https://via.placeholder.com/800x600/f0f0f0/333333?text=IP+Telephony" 
+              src="https://www.picallex.com/wp-content/uploads/2024/02/Screenshot-2024-02-05-at-18.32.39.png.webp" 
               alt="IP Telephony Integration" 
               className="w-full h-auto"
             />
@@ -42,7 +42,7 @@ export function FeaturesSection() {
           
           <div className="relative rounded-2xl overflow-hidden shadow-2xl mx-auto max-w-4xl">
             <img 
-              src="https://via.placeholder.com/1200x700/f0f0f0/333333?text=CRM+Automation" 
+              src="https://www.picallex.com/wp-content/uploads/2024/08/webphone.png.webp" 
               alt="CRM Automation" 
               className="w-full h-auto"
             />

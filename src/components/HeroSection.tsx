@@ -27,7 +27,7 @@ export function HeroSection() {
           <div className="relative opacity-0 animate-fade-in animate-delay-200">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-3xl">
               <img 
-                src="https://via.placeholder.com/800x500/f0f0f0/333333?text=CRM+Dashboard" 
+                src="https://www.picallex.com/wp-content/uploads/2024/08/webphone.png.webp" 
                 alt="Picallex CRM Dashboard" 
                 className="w-full h-auto"
               />
