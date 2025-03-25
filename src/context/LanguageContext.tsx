@@ -119,7 +119,7 @@ export const translations = {
 
 // Define language types
 export type Language = "en" | "es";
-type TranslationKey = keyof typeof translations.en;
+export type TranslationKey = keyof typeof translations.en;
 
 // Create the context
 type LanguageContextType = {

@@ -1,10 +1,14 @@
 
 import { useLanguage } from "@/context/LanguageContext";
+import { TranslationKey } from "@/context/LanguageContext";
 
 export function Footer() {
   const { t } = useLanguage();
   
   const currentYear = new Date().getFullYear();
+  
+  // Define the links with keys that match our translation object
+  const navLinks: TranslationKey[] = ["home", "benefits", "features", "testimonials"];
 
   return (
     <footer className="bg-white py-12 border-t border-gray-200">
@@ -22,7 +26,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-gray-900 mb-4">Links</h4>
             <ul className="space-y-3">
-              {["home", "benefits", "features", "testimonials"].map((item) => (
+              {navLinks.map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item}`} 
@@ -47,14 +51,14 @@ export function Footer() {
         
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500">
-            © {currentYear} Picallex. {t("language") === "en" ? "All rights reserved." : "Todos los derechos reservados."}
+            © {currentYear} Picallex. {t("language") === "English" ? "All rights reserved." : "Todos los derechos reservados."}
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <a href="#" className="text-gray-500 hover:text-picallex-red">
-              {t("language") === "en" ? "Privacy Policy" : "Política de Privacidad"}
+              {t("language") === "English" ? "Privacy Policy" : "Política de Privacidad"}
             </a>
             <a href="#" className="text-gray-500 hover:text-picallex-red">
-              {t("language") === "en" ? "Terms of Service" : "Términos de Servicio"}
+              {t("language") === "English" ? "Terms of Service" : "Términos de Servicio"}
             </a>
           </div>
         </div>
