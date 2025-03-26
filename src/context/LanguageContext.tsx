@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 // Define all text content in both languages
 export const translations = {
@@ -133,6 +133,19 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 // Create provider component
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>("en");
+
+  // Detect browser language on mount
+  useEffect(() => {
+    const detectBrowserLanguage = () => {
+      const browserLang = navigator.language.split('-')[0].toLowerCase();
+      if (browserLang === 'es') {
+        setLanguage('es');
+      }
+      // Default is already 'en'
+    };
+    
+    detectBrowserLanguage();
+  }, []);
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "es" : "en"));

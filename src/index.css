@@ -128,9 +128,27 @@
     animation-delay: 500ms;
   }
 
+  /* Perspective for 3D effects */
+  .perspective-800 {
+    perspective: 800px;
+  }
+  
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
   /* Smooth Scrolling */
   html {
     @apply scroll-smooth;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-picallex-red to-red-500 bg-clip-text text-transparent;
   }
 }
 
@@ -143,4 +161,61 @@
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-medium text-picallex-red bg-white border border-picallex-red shadow-sm transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-picallex-red focus:ring-offset-2;
   }
+  
+  .magnetic-button {
+    @apply relative cursor-pointer transition-transform duration-100;
+  }
+  
+  /* Motion UI Components */
+  .floating-element {
+    @apply absolute transition-all duration-300 ease-out;
+    animation: float 6s infinite ease-in-out;
+  }
+  
+  .floating-badge {
+    @apply absolute bg-white rounded-xl shadow-lg z-20 flex items-center space-x-2 transition-all duration-300;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInStagger {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Advanced animations for specific elements */
+.headline-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-badge, .hero-tagline, .hero-cta, .hero-image-container {
+  opacity: 0;
 }
