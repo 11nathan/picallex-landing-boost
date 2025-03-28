@@ -37,6 +37,9 @@ export function BenefitsSection() {
       <div className="section-container">
         <div className="text-center mb-16 opacity-0 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("benefits_title")}</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+            {t("benefits_subtitle")}
+          </p>
           <div className="w-24 h-1 bg-picallex-red mx-auto rounded-full"></div>
         </div>
         

@@ -1,7 +1,7 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 export function TestimonialsSection() {
   const { t } = useLanguage();
@@ -12,16 +12,22 @@ export function TestimonialsSection() {
       text: t("testimonial1_text"),
       name: t("testimonial1_name"),
       company: t("testimonial1_company"),
+      stars: 5,
+      result: t("testimonial1_result")
     },
     {
       text: t("testimonial2_text"),
       name: t("testimonial2_name"),
       company: t("testimonial2_company"),
+      stars: 5,
+      result: t("testimonial2_result")
     },
     {
       text: t("testimonial3_text"),
       name: t("testimonial3_name"),
       company: t("testimonial3_company"),
+      stars: 5,
+      result: t("testimonial3_result")
     }
   ];
   
@@ -38,6 +44,7 @@ export function TestimonialsSection() {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("testimonials_title")}</h2>
+          <p className="text-xl opacity-80 max-w-2xl mx-auto mb-6">{t("testimonials_subtitle")}</p>
           <div className="w-24 h-1 bg-picallex-red mx-auto rounded-full"></div>
         </div>
         
@@ -52,11 +59,21 @@ export function TestimonialsSection() {
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl">
-                      <Quote className="h-12 w-12 text-picallex-red mb-6 opacity-80" />
+                      <div className="flex justify-between items-center mb-6">
+                        <Quote className="h-12 w-12 text-picallex-red opacity-80" />
+                        <div className="flex">
+                          {Array(testimonial.stars).fill(0).map((_, i) => (
+                            <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
                       <p className="text-lg md:text-xl mb-8">{testimonial.text}</p>
                       <div>
                         <h4 className="text-xl font-bold">{testimonial.name}</h4>
                         <p className="text-gray-400">{testimonial.company}</p>
+                      </div>
+                      <div className="mt-6 bg-picallex-red/20 p-3 rounded-lg">
+                        <p className="text-sm font-medium">{t("businessResult")}: <span className="text-picallex-red font-bold">{testimonial.result}</span></p>
                       </div>
                     </div>
                   </div>
@@ -96,7 +113,7 @@ export function TestimonialsSection() {
           {/* Company logos */}
           <div className="mt-20">
             <p className="text-center text-gray-400 mb-8 uppercase text-sm tracking-wider">
-              Trusted by innovative companies
+              {t("trustedBy")}
             </p>
             <div className="flex flex-wrap justify-center gap-8 opacity-70">
               {Array(5).fill(0).map((_, i) => (
