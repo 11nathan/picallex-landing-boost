@@ -65,6 +65,11 @@ const es = {
   ctaBenefit3: "Soporte al cliente 24/7",
   ctaBenefit4: "Cancela cuando quieras",
   
+  // Contact Section (adding missing keys)
+  contactUs: "Contáctanos",
+  getInTouch: "Ponte en Contacto",
+  contactFormSubtitle: "Estamos aquí para ayudarte. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.",
+  
   discoverMore: "Descubrir Más",
   yourName: "Tu Nombre",
   namePlaceholder: "Ingresa tu nombre completo",

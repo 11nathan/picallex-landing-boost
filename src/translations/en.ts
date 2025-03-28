@@ -65,6 +65,11 @@ const en = {
   ctaBenefit3: "24/7 customer support",
   ctaBenefit4: "Cancel anytime",
   
+  // Contact Section (adding missing keys)
+  contactUs: "Contact Us",
+  getInTouch: "Get in Touch",
+  contactFormSubtitle: "We're here to help. Fill out the form below and we'll get back to you as soon as possible.",
+  
   discoverMore: "Discover More",
   yourName: "Your Name",
   namePlaceholder: "Enter your full name",

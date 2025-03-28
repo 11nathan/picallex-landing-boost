@@ -59,4 +59,4 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 };
 
 // Re-export TranslationKey from the translations file
-export { TranslationKey };
+export type { TranslationKey };
