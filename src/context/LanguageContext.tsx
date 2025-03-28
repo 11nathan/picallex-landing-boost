@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext } from 'react';
 
 // Define the structure of our translations
@@ -133,15 +134,7 @@ const translations = {
     features: "Features",
     testimonials: "Testimonials",
     ctaButton: "Get Started",
-    language: "English",
-    testimonials_title: "What Our Customers Say",
-    testimonial1_name: "John Doe",
-    testimonial1_company: "CEO, ABC Company",
-    testimonial2_name: "Jane Smith",
-    testimonial2_company: "Marketing Director, XYZ Corp",
-    testimonial3_text: "Since implementing Picallex CRM, our sales cycle has shortened by 35%. The intuitive interface and powerful analytics have transformed our business.",
-    testimonial3_name: "Michael Johnson",
-    testimonial3_company: "Sales Director, 123 Industries"
+    language: "English"
   },
   es: {
     liveChat: "Chat en Vivo",
@@ -243,15 +236,7 @@ const translations = {
     features: "Características",
     testimonials: "Testimonios",
     ctaButton: "Comenzar Ahora",
-    language: "Español",
-    testimonials_title: "Lo Que Dicen Nuestros Clientes",
-    testimonial1_name: "John Doe",
-    testimonial1_company: "CEO, ABC Company",
-    testimonial2_name: "Jane Smith",
-    testimonial2_company: "Directora de Marketing, XYZ Corp",
-    testimonial3_text: "Desde que implementamos Picallex CRM, nuestro ciclo de ventas se ha reducido en un 35%. La interfaz intuitiva y los potentes análisis han transformado nuestro negocio.",
-    testimonial3_name: "Michael Johnson",
-    testimonial3_company: "Director de Ventas, 123 Industries"
+    language: "Español"
   },
 };
 
