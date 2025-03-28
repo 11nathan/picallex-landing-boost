@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext } from 'react';
 
 // Define the structure of our translations
@@ -5,10 +6,14 @@ interface Translations {
   [key: string]: string;
 }
 
+// Define available translation keys
+export type TranslationKey = string;
+
 // Define the structure of our language context
 interface LanguageContextProps {
   language: string;
   setLanguage: (lang: string) => void;
+  toggleLanguage: () => void;
   t: (key: string) => string;
 }
 
@@ -16,6 +21,7 @@ interface LanguageContextProps {
 const LanguageContext = createContext<LanguageContextProps>({
   language: 'en',
   setLanguage: () => {},
+  toggleLanguage: () => {},
   t: (key: string) => key, // Default translation returns the key
 });
 
@@ -83,12 +89,6 @@ const translations = {
     thankYouForContacting: "Thank You!",
     contactResponseMessage: "We've received your message and will get back to you shortly.",
     sendAnotherMessage: "Send Another Message",
-    liveChat: "Live Chat",
-    whatsAppSupport: "WhatsApp Support",
-    
-    // Contact Section
-    readyToGetStarted: "Ready to Transform Your Business?",
-    contactSectionDescription: "Reach out to our team today and discover how Picallex CRM can help you streamline operations, improve customer relationships, and drive growth for your business.",
     contactInfo: "Contact Information",
     customerSupport: "Customer Support",
     emailUs: "Email Us",
@@ -96,6 +96,22 @@ const translations = {
     businessHours: "Business Hours",
     businessHoursContent: "Monday-Friday: 9am-6pm EST",
     followUs: "Follow Us On Social Media",
+    readyToGetStarted: "Ready to Transform Your Business?",
+    contactSectionDescription: "Reach out to our team today and discover how Picallex CRM can help you streamline operations, improve customer relationships, and drive growth for your business.",
+    home: "Home",
+    benefits: "Benefits",
+    features: "Features",
+    testimonials: "Testimonials",
+    ctaButton: "Get Started",
+    language: "English",
+    testimonials_title: "What Our Customers Say",
+    testimonial1_name: "John Doe",
+    testimonial1_company: "CEO, ABC Company",
+    testimonial2_name: "Jane Smith",
+    testimonial2_company: "Marketing Director, XYZ Corp",
+    testimonial3_text: "Since implementing Picallex CRM, our sales cycle has shortened by 35%. The intuitive interface and powerful analytics have transformed our business.",
+    testimonial3_name: "Michael Johnson",
+    testimonial3_company: "Sales Director, 123 Industries"
   },
   es: {
     liveChat: "Chat en Vivo",
@@ -152,12 +168,6 @@ const translations = {
     thankYouForContacting: "¡Gracias!",
     contactResponseMessage: "Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.",
     sendAnotherMessage: "Enviar Otro Mensaje",
-    liveChat: "Chat en Vivo",
-    whatsAppSupport: "Soporte por WhatsApp",
-    
-    // Contact Section
-    readyToGetStarted: "¿Listo para Transformar Tu Negocio?",
-    contactSectionDescription: "Comunícate con nuestro equipo hoy y descubre cómo Picallex CRM puede ayudarte a optimizar operaciones, mejorar las relaciones con los clientes e impulsar el crecimiento de tu negocio.",
     contactInfo: "Información de Contacto",
     customerSupport: "Atención al Cliente",
     emailUs: "Envíanos un Email",
@@ -165,6 +175,22 @@ const translations = {
     businessHours: "Horario de Atención",
     businessHoursContent: "Lunes-Viernes: 9am-6pm (Hora local)",
     followUs: "Síguenos en Redes Sociales",
+    readyToGetStarted: "¿Listo para Transformar Tu Negocio?",
+    contactSectionDescription: "Comunícate con nuestro equipo hoy y descubre cómo Picallex CRM puede ayudarte a optimizar operaciones, mejorar las relaciones con los clientes e impulsar el crecimiento de tu negocio.",
+    home: "Inicio",
+    benefits: "Beneficios",
+    features: "Características",
+    testimonials: "Testimonios",
+    ctaButton: "Comenzar Ahora",
+    language: "Español",
+    testimonials_title: "Lo Que Dicen Nuestros Clientes",
+    testimonial1_name: "John Doe",
+    testimonial1_company: "CEO, ABC Company",
+    testimonial2_name: "Jane Smith",
+    testimonial2_company: "Directora de Marketing, XYZ Corp",
+    testimonial3_text: "Desde que implementamos Picallex CRM, nuestro ciclo de ventas se ha reducido en un 35%. La interfaz intuitiva y los potentes análisis han transformado nuestro negocio.",
+    testimonial3_name: "Michael Johnson",
+    testimonial3_company: "Director de Ventas, 123 Industries"
   },
 };
 
@@ -183,8 +209,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     return translations[language as keyof typeof translations]?.[key] || key;
   };
 
+  // Add the toggle function to switch between languages
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'es' : 'en');
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
